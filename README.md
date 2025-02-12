@@ -15,19 +15,9 @@ This repository is designed to:
 
 ## 📂 Directory Structure
 
-| Directory       | Purpose                              | Contents                                                             |
-|----------------|--------------------------------------|---------------------------------------------------------------------|
-| **`src/`**      | Reusable Kafka components          | Producers, Consumers, Kafka Streams, Kafka Connect, Admin utilities |
-| **`projects/`** | End-to-end Kafka projects          | Complete real-world implementations                                 |
-| **`tools/`**    | Helper scripts & automation        | Scripts for Kafka CLI tasks, monitoring, and backups                |
-| **`docs/`**     | Learning materials & documentation | Tutorials, reference guides, architecture diagrams                  |
-
-## 🛠️ Getting Started
-
-### **📌 Prerequisites**
-
-Before using or contributing to this repository, ensure you have:
-
-- **Kafka installed** locally or running via **Docker/Kubernetes**.
-- Basic knowledge of **Kafka producers, consumers, topics, and brokers**.
-- Familiarity with **stream processing concepts (Kafka Streams, ksqlDB, etc.)**.
+| Directory       | Purpose                              | Contents                                                            |
+|----------------|---------------------------------------|---------------------------------------------------------------------|
+| **`src/`**      | Reusable Kafka components            | Producers, Consumers, Kafka Streams, Kafka Connect, Admin utilities |
+| **`projects/`** | End-to-end Kafka projects            | Complete real-world implementations                                 |
+| **`tools/`**    | Helper scripts & automation          | Scripts for Kafka CLI tasks, monitoring, and backups                |
+| **`docs/`**     | Learning materials & documentation   | Tutorials, reference guides, architecture diagrams                  |
