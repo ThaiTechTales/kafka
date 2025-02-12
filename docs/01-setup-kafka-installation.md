@@ -2,11 +2,11 @@
 
 ## 1. Kafka in KRaft Mode (Zookeeper-less)
 
-Kafka runs in **KRaft (Kafka Raft) mode**, which eliminates the need for Apache ZooKeeper and uses its own Raft-based metadata quorum.
+Kafka runs in **KRaft (Kafka Raft) mode**, which removes the need for Apache ZooKeeper and uses its own Raft-based system for managing metadata. Zookeeper will be deprecated and expected to me removed with Kafka 4.0.
 
 ## 2. Generate a Random UUID for Storage
 
-Run the following command to generate a **random UUID** for Kafka storage:
+A UUID (Universally Unique Identifier) is a 128-bit number used to uniquely identify objects. Run the following command to generate a **random UUID** for Kafka storage:
 
 ```sh
 kafka-storage.sh random-uuid
@@ -14,7 +14,7 @@ kafka-storage.sh random-uuid
 
 ## 3. Format the Kafka Storage
 
-Format the Kafka storage with the generated UUID by running:
+Format the Kafka storage with the generated UUID. By formatting the storage with a unique UUID, it ensures that the Kafka server can identify its own storage and metadata.
 
 ```sh
 ~/kafka_2.13-3.9.0/bin/kafka-storage.sh format -t <uuid> -c ~/kafka_2.13-3.9.0/config/kraft/server.properties

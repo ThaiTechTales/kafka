@@ -18,15 +18,15 @@ To ensure **consistency, logical ordering, and easy navigation**, each file in t
 
 ## 📌 Examples of Categories & Topics
 
-| **Category**       | **Topic** Example                    | **Filename Example**                     |
-|--------------------|--------------------------------------|------------------------------------------|
-| `setup`           | Kafka installation                  | `01-setup-kafka-installation.md`        |
-| `setup`           | Creating Kafka topics               | `02-setup-kafka-topics.md`              |
-| `operations`      | Kafka CLI commands                  | `03-operations-kafka-cli.md`            |
-| `operations`      | Kafka producers & consumers         | `04-operations-kafka-producers-consumers.md` |
-| `streams`        | Kafka Streams introduction          | `05-streams-kafka-streams.md`           |
-| `connect`        | Kafka Connect & integrations        | `06-connect-kafka-connect.md`           |
-| `advanced`        | Kafka performance tuning            | `07-advanced-kafka-tuning.md`           |
-| `security`        | Kafka authentication & encryption   | `08-security-kafka-security.md`         |
-| `troubleshooting` | Debugging common Kafka issues       | `09-troubleshooting-kafka-debugging.md` |
-| `use-cases`      | Kafka real-world applications       | `10-use-cases-kafka-real-world.md`      |
+| **Category**        | **Topic** Example                   | **Filename Example**                         |
+|---------------------|-------------------------------------|----------------------------------------------|
+| `setup`             | Kafka installation                  | `01-setup-kafka-installation.md`             |
+| `setup`             | Creating Kafka topics               | `02-setup-kafka-topics.md`                   |
+| `operations`        | Kafka CLI commands                  | `03-operations-kafka-cli.md`                 |
+| `operations`        | Kafka producers & consumers         | `04-operations-kafka-producers-consumers.md` |
+| `streams`           | Kafka Streams introduction          | `05-streams-kafka-streams.md`                |
+| `connect`           | Kafka Connect & integrations        | `06-connect-kafka-connect.md`                |
+| `advanced`          | Kafka performance tuning            | `07-advanced-kafka-tuning.md`                |
+| `security`          | Kafka authentication & encryption   | `08-security-kafka-security.md`              |
+| `troubleshooting`   | Debugging common Kafka issues       | `09-troubleshooting-kafka-debugging.md`      |
+| `use-cases`         | Kafka real-world applications       | `10-use-cases-kafka-real-world.md`           |

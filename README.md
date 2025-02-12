@@ -16,7 +16,7 @@ This repository is designed to:
 ## 📂 Directory Structure
 
 | Directory       | Purpose                              | Contents                                                            |
-|----------------|---------------------------------------|---------------------------------------------------------------------|
+|-----------------|---------------------------------------|--------------------------------------------------------------------|
 | **`src/`**      | Reusable Kafka components            | Producers, Consumers, Kafka Streams, Kafka Connect, Admin utilities |
 | **`projects/`** | End-to-end Kafka projects            | Complete real-world implementations                                 |
 | **`tools/`**    | Helper scripts & automation          | Scripts for Kafka CLI tasks, monitoring, and backups                |
