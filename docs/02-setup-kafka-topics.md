@@ -2,6 +2,7 @@
 
 Kafka topics are the primary way to organise and manage data in Kafka. Topics are logical channels that allow producers to write messages and consumers to read messages. Topics are divided into partitions, which are distributed across brokers in a Kafka cluster.
 
+
 ```sh
 # kafka-topics.sh is a command-line tool for managing Kafka topics.
 # Used to create, list, delete, and describe topics.

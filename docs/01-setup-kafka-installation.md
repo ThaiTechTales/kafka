@@ -28,7 +28,7 @@ Example:
 
 ## 4. Start the Kafka Server
 
-To start the Kafka server in **KRaft mode**, execute:
+To start the Kafka server in **KRaft mode**, execute the below command. The Kafka server must be running in the background order to create topics, produce messages, and consume messages. This can be done by running the Kafka server in a separate terminal window or as a background process and in another terminal window run the Kafka CLI commands. If a Kafka server is not running, the Kafka CLI commands will not work.
 
 ```sh
 ~/kafka_2.13-3.9.0/bin/kafka-server-start.sh ~/kafka_2.13-3.9.0/config/kraft/server.properties
