@@ -110,7 +110,7 @@ When a consumer restarts, Kafka looks at the committed offset and starts consumi
 - Allows consumer groups to scale: New consumers can join and start from the right place.
 - Enables replaying messages: If offsets are reset, a consumer can reprocess messages.
 
-## 6. Start a Consumer in a Different Group from the Beginning
+## 6. Start a Consumer in a Different Group from the Beginning with --from-beginning
 
 ```sh
 # Terminal 6 (Consumer #4) - Start a consumer in 'my-second-application' group from the beginning
