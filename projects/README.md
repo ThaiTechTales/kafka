@@ -140,12 +140,6 @@ Alternatively, download the Code Runner extension in VS Code and run the and con
 3. Click Edit in settings.json.
 4. Modify the Java command inside the "code-runner.executorMap" section
 ![Code Runner](images/project-setup-code-runner.png)
-5. (Optional) Automatically clear output before running code
-to clear the output window:
-    1. Open VS Code Settings (Cmd + , on Mac).
-    2. Search for `code-runner.clearPreviousOutput`.
-    3. Enable the option: `Clear previous output before running`.
-6. Save the settings.json file.
 
 ```json
 {
@@ -154,3 +148,10 @@ to clear the output window:
     }
 }
 ```
+
+5. (Optional) Automatically clear output before running code
+to clear the output window:
+    1. Open VS Code Settings (Cmd + , on Mac).
+    2. Search for `code-runner.clearPreviousOutput`.
+    3. Enable the option: `Clear previous output before running`.
+6. Save the settings.json file.
