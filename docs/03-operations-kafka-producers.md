@@ -1,6 +1,6 @@
 # Kafka Producers CLI
 
-Kafka producers are applications that write data to Kafka topics. Producers send messages to Kafka brokers, which then store the messages in topics. Producers can send messages with or without keys, and can also specify message properties such as acknowledgements and message compression.
+Kafka producers are applications responsible for writing data to Kafka topics. They send messages to Kafka brokers, which store them within the designated topics. Producers can send messages with or without keys and configure various properties, such as acknowledgments and message compression, to optimise performance and reliability.
 
 ```sh
 # Create a topic. If the topic does not exist, it will be created with default settings (1 partition, replication factor 1) however it is recommended to create topics with the appropriate number of partitions because changing the number of partitions later can be complex and prevent prevent performance issue and future headaches.

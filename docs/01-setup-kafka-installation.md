@@ -2,7 +2,7 @@
 
 ## 1. Kafka in KRaft Mode (Zookeeper-less)
 
-Kafka runs in **KRaft (Kafka Raft) mode**, which removes the need for Apache ZooKeeper and uses its own Raft-based system for managing metadata. Zookeeper will be deprecated and expected to me removed with Kafka 4.0.
+Kafka runs in **KRaft (Kafka Raft) mode**, which removes the need for Apache ZooKeeper and uses its own Raft-based system for managing metadata. Zookeeper will be deprecated and expected to be removed with Kafka 4.0.
 
 ## 2. Generate a Random UUID for Storage
 
