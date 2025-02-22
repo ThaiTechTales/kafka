@@ -31,7 +31,7 @@ kafka-console-consumer.sh \
 
 Kafka producers send messages to topics. By default, messages are sent to partitions based on a key or in a round-robin fashion.
 
-The `RoundRobinPartitioner` distributes messages evenly across partitions to balance the load. However, it should not be used for applications that require message order. As each message is produced, it will be sent to the next consumer (seen in the consumer terminal).
+The `RoundRobinPartitioner` distributes messages evenly across partitions to balance the load. However, it should not be used for applications that require message order. As each message is produced, it will be sent to the next consumer (seen in the consumer terminal). This should be avoided in production environments.
 
 ```sh
 # Terminal 3 (Producer) - Producing messages to the topic

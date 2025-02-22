@@ -7,10 +7,6 @@ Kafka topics serve as the primary mechanism for organising and managing data wit
 To view all existing topics in the Kafka cluster:
 
 ```sh
-kafka-topics.sh --bootstrap-server localhost:9092 --list
-```
-
-```sh
 # kafka-topics.sh is a command-line tool for managing Kafka topics.
 # Used to create, list, delete, and describe topics.
 kafka-topics.sh
@@ -25,8 +21,8 @@ kafka-topics.sh --bootstrap-server localhost:9092 --list
 
 Kafka topics can be created with **default settings** or with a specific number of partitions and replication factors.
 
-
 ### Create a Topic with Default Settings
+
 By default, topics are created with **1 partition** and **a replication factor of 1**.
 
 ```sh
@@ -45,6 +41,7 @@ kafka-topics.sh \
 ```
 
 ### Create a Topic with Multiple Partitions
+
 Using multiple partitions enables **parallelism and scalability**.
 
 ```sh
@@ -91,6 +88,7 @@ kafka-topics.sh \
 ```
 
 ## 3️. Verify Topic Creation
+
 After creating topics, list them to confirm they exist:
 
 ```sh
@@ -123,6 +121,7 @@ kafka-topics.sh \
 ```
 
 ## 4️. Delete Kafka Topics (Irreversible!)
+
 Deleting a topic **removes all data and metadata** associated with it. Be **cautious**, as this action is **irreversible** unless topic deletion is disabled in Kafka configurations (`delete.topic.enable=false`).
 
 ```sh
