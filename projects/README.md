@@ -271,5 +271,5 @@ Alternatively, download the Code Runner extension in VS Code and run the and con
 5. (Optional) Automatically clear output before running code to clear the output window:
     1. Open VS Code Settings (Cmd + , on Mac).
     2. Search for `code-runner.clearPreviousOutput`.
-    3. Enable the option: `Clear previous output before running`.
+    3. Enable the option: `Clear previous output`.
 6. Save the settings.json file.
