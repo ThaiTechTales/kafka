@@ -7,6 +7,14 @@ When the shutdown hook is triggered, consumer.wakeup() will be called, causing a
 Then, mainThread.join() will be called to wait for the main thread to finish, allowing the execution of the code in the main thread. 
 Finally, consumer.close() will be called to close the consumer and commit the offsets.
  */
+
+ /*
+Add the following to the `build.gradle.kts` file in the dependencies section to run `pkill -SIGINT -f ConsumerDemoWithShutdown` from another terminal to gracefully shutdown the consumer (which is running in the another terminal):
+tasks.withType<JavaExec>().configureEach {
+    // Ignore non-zero exit values (like SIGINT = 130)
+    isIgnoreExitValue = true
+}
+ */
 package org.example;
 
 import java.time.Duration;

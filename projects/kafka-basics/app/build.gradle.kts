@@ -54,3 +54,9 @@ tasks.named<Test>("test") {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
 }
+
+tasks.withType<JavaExec>().configureEach {
+    // Ignore non-zero exit values (like SIGINT = 130)
+    isIgnoreExitValue = true
+}
+
