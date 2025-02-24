@@ -14,10 +14,10 @@ import org.apache.kafka.common.serialization.StringSerializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class ProducerDemoWithCallback {
+public class ProducerDemoKeys {
 
     // Logger instance for logging information and debugging
-    private static final Logger log = LoggerFactory.getLogger(ProducerDemoWithCallback.class.getSimpleName());
+    private static final Logger log = LoggerFactory.getLogger(ProducerDemoKeys.class.getSimpleName());
 
     public static void main(String[] args) {
         log.info("I am a Kafka Producer with a Callback");
@@ -34,22 +34,25 @@ public class ProducerDemoWithCallback {
         properties.setProperty("key.serializer", StringSerializer.class.getName());
         properties.setProperty("value.serializer", StringSerializer.class.getName());
 
-        // Batch size of 400 bytes
-        properties.setProperty("batch.size", "400");
-
         // Create the Kafka Producer
         KafkaProducer<String, String> producer = new KafkaProducer<>(properties);
 
-        for (int j = 0; j < 10; j++) {
-            // Send 30 messages to the Kafka topic note that it will use sticky partitioning because the key is null
+        for (int j = 0; j < 2; j++) {
+
+            // Send 10 messages to the Kafka topic note that it will use sticky partitioning because the key is null
             // Sticky partitioning is when all messages with the same key go to the same partition (if the key is null, it will be sticky to a partition)
-            for (int i = 0; i < 30; i++) {
+            for (int i = 0; i < 10; i++) {
+
+                String topic = "first_topic";
+                String key = "id_" + i;
+                String value = "Hello, Kafka!! " + i;
+
                 // Create a Producer Record (message to be sent)
                 // A ProducerRecord consists of:
                 //    - Topic: The Kafka topic to which the message is sent
-                //    - Key (optional): Used for partitioning (null in this case)
+                //    - Key (optional): Used for partitioning. If the key is null, it will be sticky to a partition however if the key is not null, it will be sent to a partition based on the hash of the key
                 //    - Value: The actual message content
-                ProducerRecord<String, String> record = new ProducerRecord<>("first_topic", "Hello, Kafka!!");
+                ProducerRecord<String, String> record = new ProducerRecord<>(topic, key, value);
 
                 // Send the message
                 producer.send(record, new Callback() {
@@ -59,11 +62,7 @@ public class ProducerDemoWithCallback {
 
                         if (exception == null) {
                             // if the record is successfully sent
-                            log.info("Received new metadata. \n"
-                                    + "Topic: " + metadata.topic() + "\n"
-                                    + "Partition: " + metadata.partition() + "\n"
-                                    + "Offset: " + metadata.offset() + "\n"
-                                    + "Timestamp: " + metadata.timestamp());
+                            log.info("Key: " + key + " | Partition: " + metadata.partition());
                         } else {
                             log.error("Error while producing", exception);
                         }
@@ -71,7 +70,6 @@ public class ProducerDemoWithCallback {
                 });
             }
 
-            // Introduce a delay between sending message batches, allowing observation of how Kafka switches partitions.
             try {
                 Thread.sleep(500);
             } catch (InterruptedException ex) {

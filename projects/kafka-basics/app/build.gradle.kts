@@ -47,8 +47,7 @@ java {
 
 application {
     // Define the main class for the application.
-    // mainClass = "org.example.ProducerDemo"
-    mainClass = "org.example.ProducerDemoWithCallback"
+    mainClass = "org.example.ConsumerDemoWithShutdown"
 }
 
 tasks.named<Test>("test") {
