@@ -12,10 +12,10 @@ import org.apache.kafka.common.serialization.StringSerializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class ProducerDemo {
+public class Producer {
 
     // Logger instance for logging information and debugging
-    private static final Logger log = LoggerFactory.getLogger(ProducerDemo.class.getSimpleName());
+    private static final Logger log = LoggerFactory.getLogger(Producer.class.getSimpleName());
 
     public static void main(String[] args) {
         log.info("Kafka Producer Application Started");

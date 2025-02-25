@@ -15,10 +15,10 @@ import org.apache.kafka.common.serialization.StringDeserializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class ConsumerDemo {
+public class Consumer {
 
     // Logger instance for logging information and debugging
-    private static final Logger log = LoggerFactory.getLogger(ConsumerDemo.class.getSimpleName());
+    private static final Logger log = LoggerFactory.getLogger(Consumer.class.getSimpleName());
 
     public static void main(String[] args) {
         log.info("I am a Kafka Consumer");

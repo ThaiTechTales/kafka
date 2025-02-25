@@ -47,7 +47,7 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass = "org.example.ConsumerDemoWithShutdown"
+    mainClass = "org.example.ConsumerWithCooperative"
 }
 
 tasks.named<Test>("test") {

@@ -23,19 +23,20 @@ import java.util.Properties;
 
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
+import org.apache.kafka.clients.consumer.CooperativeStickyAssignor;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.common.errors.WakeupException;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class ConsumerDemoWithShutdown {
+public class ConsumerWithCooperative {
 
     // Logger instance for logging information and debugging
-    private static final Logger log = LoggerFactory.getLogger(ConsumerDemoWithShutdown.class.getSimpleName());
+    private static final Logger log = LoggerFactory.getLogger(ConsumerWithCooperative.class.getSimpleName());
 
     public static void main(String[] args) {
-        log.info("I am a Kafka Consumer - with shutdown");
+        log.info("I am a Kafka Consumer - with shutdown and cooperative rebalancing");
         log.info("Kafka Producer Application Started");
 
         String groupID = "my-consumer-group";
@@ -52,6 +53,8 @@ public class ConsumerDemoWithShutdown {
         properties.setProperty("value.deserializer", StringDeserializer.class.getName());
 
         properties.setProperty("group.id", groupID);
+
+        properties.setProperty("partition.assignment.strategy", CooperativeStickyAssignor.class.getName());
 
         // earliest: read from the beginning of the topic
         // latest: read only new messages
@@ -89,7 +92,7 @@ public class ConsumerDemoWithShutdown {
 
             // Poll for new data
             while (true) {
-                log.info("Polling for new data");
+                // log.info("Polling for new data");
 
                 // How long we're willing to wait to receive data
                 ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(1000));
