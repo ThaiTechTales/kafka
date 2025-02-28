@@ -71,15 +71,12 @@ kafka-console-consumer.sh \
 
 ![Kafka Consumer Group](images/05-operations-kafka-consumer-groups-offset-01.png)
 
-`--from-beginning` only applies if there are no previously committed offsets for the consumer group.
-If a consumer joins an existing group, Kafka will resume from the last committed offset, ignoring `--from-beginning`.
+The `--from-beginning` flag only applies if the consumer group has no previously **committed offsets**.
 
-Adding another consumer to the same consumer group allows Kafka to distribute partitions among them. Messages are balanced between the two consumers. However, with this `--from-beginning` as specified. However, this will not show messages that were produced before the consumer was started from `-beginning` because the consumer group tracks the offset.
+- If a **new consumer group** starts with `--from-beginning`, it will read all messages from the topic's earliest available offset.
+- If a consumer joins an existing group, Kafka ignores --from-beginning and resumes from the last committed offset.
 
-When starting a new consumer in the existing group `my-first-application` this group already exists, and Kafka has been tracking its offsets.
-
-Even though `--from-beginning` is specified, it does not override existing offsets.
-Since `my-first-application` has already committed offsets for previous messages, the new consumer will start consuming only from the latest unprocessed messages.
+This means that when a new consumer joins **an already existing group** (e.g., my-first-application), it will **not** read old messages from the topic—even if `--from-beginning` is specified—because Kafka resumes consumption from the last committed offset for that group.
 
 A **committed offset** in Kafka represents the last successfully processed message by a consumer group for a given topic partition. Kafka uses offsets to track which messages have been read, ensuring that consumers resume from where they left off in case of failure or restart.
 

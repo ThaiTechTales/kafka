@@ -9,7 +9,7 @@ Finally, consumer.close() will be called to close the consumer and commit the of
  */
 
  /*
-Add the following to the `build.gradle.kts` file in the dependencies section to run `pkill -SIGINT -f ConsumerDemoWithShutdown` from another terminal to gracefully shutdown the consumer (which is running in the another terminal):
+Add the following to the `build.gradle.kts` file in the dependencies section to run `pkill -SIGINT -f ConsumerDemoWithShutdown` from another terminal to gracefully shutdown the consumer (which is running in the other terminal):
 tasks.withType<JavaExec>().configureEach {
     // Ignore non-zero exit values (like SIGINT = 130)
     isIgnoreExitValue = true
