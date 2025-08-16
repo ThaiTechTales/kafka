@@ -58,7 +58,7 @@ kafka-console-consumer.sh \
     --group my-first-application
 ```
 
-## 5. Add Another Consumer to the Same Group with --from-beginning
+## 5. Add Another Consumer to the Same Group with `--from-beginning`
 
 ```sh
 # Terminal 5 (Consumer #3) - Start another consumer in 'my-first-application' group

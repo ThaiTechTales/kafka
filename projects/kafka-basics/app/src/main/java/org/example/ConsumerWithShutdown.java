@@ -9,7 +9,7 @@ Finally, consumer.close() will be called to close the consumer and commit the of
  */
 
  /*
-Add the following to the `build.gradle.kts` file in the dependencies section to run `pkill -SIGINT -f ConsumerDemoWithShutdown` from another terminal to gracefully shutdown the consumer (which is running in the other terminal):
+Add the following to the `build.gradle.kts` file in the dependencies section to run `pkill -SIGINT -f ConsumerWithShutdown` from another terminal to gracefully shutdown the consumer (which is running in the other terminal):
 tasks.withType<JavaExec>().configureEach {
     // Ignore non-zero exit values (like SIGINT = 130)
     isIgnoreExitValue = true
@@ -36,12 +36,12 @@ public class ConsumerWithShutdown {
 
     public static void main(String[] args) {
         log.info("I am a Kafka Consumer - with shutdown");
-        log.info("Kafka Producer Application Started");
+        log.info("Kafka Consumer Application Started");
 
         String groupID = "my-consumer-group";
         String topic = "first_topic";
 
-        // Define Kafka Producer properties
+        // Define Kafka Consumer properties
         Properties properties = new Properties();
 
         // Specify Kafka broker address (localhost in this case)

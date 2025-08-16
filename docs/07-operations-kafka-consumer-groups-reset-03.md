@@ -54,7 +54,7 @@ Other options for resetting offsets include:
 
 ## 4. Verify the Consumer Group Status
 
-After resetting offsets, describe the consumer group again to verify the changes. There will be a lag between the current offset and the end offset, indicating that the consumer group is behind. This lag increased because the offset moveed backward, meaning the consumer has more messages to reprocess.
+After resetting offsets, describe the consumer group again to verify the changes. There will be a lag between the current offset and the end offset, indicating that the consumer group is behind. This lag increased because the offset moved backward, meaning the consumer has more messages to reprocess.
 
 ```sh
 # Describe the consumer group after resetting offsets
